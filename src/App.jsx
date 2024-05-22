@@ -2,6 +2,7 @@ import { useContext, useState } from 'react'
 import { BookContext } from './context/bookContext'
 import CardBook from './components/CardBook'
 import ItemOfList from './components/ItemOfList'
+import { Helmet } from 'react-helmet'
 
 function App() {
   const { booksList, listOfReading } = useContext(BookContext)
@@ -13,6 +14,10 @@ function App() {
 
   return (
     <main className='container mx-auto px-4 py-12 flex flex-col items-center justify-center'>
+      <Helmet>
+        <title>Libros en la lista de lectura</title>
+        <meta name='description' content='Lista de Lecturas' />
+      </Helmet>
       <header className='flex flex-row items-center justify-between w-full'>
         <div className='flex flex-col'>
           <h1>Lista de Lecturas</h1>
